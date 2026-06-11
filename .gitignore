@@ -9,3 +9,4 @@ lakefile.olean
 !/data/bad_imports
 !/data/one_import
 !/data/forest.n+b.user.user-filter.mathlib4
+.lake

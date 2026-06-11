@@ -9,12 +9,12 @@ import {
 import {
   InteractiveCode,
   useAsync,
-  RpcContext,
   CodeWithInfos,
   RpcSessionAtPos,
   DocumentPosition,
   EditorContext,
   EditorApi,
+  useRpcSession,
 } from "@leanprover/infoview";
 
 type ItemResult =
@@ -93,7 +93,7 @@ export default function (props: Props) {
   const [items, update] = React.useReducer(reducer, props.items || []);
   const [status, setStatus] = React.useState("init");
   const r = React.useRef(0);
-  const rs = React.useContext(RpcContext);
+  const rs = useRpcSession();
   const [showFailed, setshowFailed] = React.useState(true);
   async function e() {
     r.current += 1;

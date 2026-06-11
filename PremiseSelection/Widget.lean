@@ -202,7 +202,6 @@ def syntaxToLspRange [MonadFileMap M] [Monad M] (stx : Syntax): M Lsp.Range := d
   let endPos := (fm.utf8PosToLspPos <$> stx.getTailPos?) |>.getD pos
   return Lsp.Range.mk pos endPos
 
-
 def saveWidget (stx : Syntax) (xs : Array Item) : TacticM Unit := do
   let fn ← getFileName
   let uri := System.Uri.pathToUri fn

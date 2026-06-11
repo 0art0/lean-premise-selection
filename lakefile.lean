@@ -3,18 +3,17 @@ open Lake DSL
 
 package leanPremiseSelection
 
-require mathlib from git
-  "https://github.com/leanprover-community/mathlib4"@
-  "df32aa2ebe0f1ef9bce7831b1bcc0723f07a4724"
-
-require proofwidgets from git
-  "https://github.com/EdAyers/ProofWidgets4"@"v0.0.21"
+require "leanprover-community" / "mathlib" @ git "v4.22.0-rc4"
+require "leanprover-community" / "proofwidgets" @ git "v0.0.67"
 
 @[default_target]
 lean_lib PremiseSelection
 
 @[default_target]
 lean_lib Tests
+
+@[default_target]
+lean_lib InteractiveSuggestions
 
 @[default_target]
 lean_exe Train where
